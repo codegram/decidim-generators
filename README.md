@@ -1,5 +1,7 @@
 # Decidim::Generators
 
+[![asciicast](https://asciinema.org/a/9afrow4k095ksyuahpgjipfl4.png)](https://asciinema.org/a/9afrow4k095ksyuahpgjipfl4)
+
 TODO: Add gem's description
 
 ## Installation
