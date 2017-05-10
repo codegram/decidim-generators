@@ -1,0 +1,26 @@
+# frozen_string_literal: true
+
+module Decidim
+  module <%= engine_module_name %>
+    # This is the engine that runs on the public interface of `<%= engine_folder %>`.
+    class Engine < ::Rails::Engine
+      isolate_namespace Decidim::<%= engine_module_name %>
+
+      routes do
+        # Add engine routes here
+        # resources :<%= engine_name %>
+        # root to: "<%= engine_name %>#index"
+      end
+
+      initializer "decidim_<%= engine_name %>.assets" do |app|
+        app.config.assets.precompile += %w(decidim_<%= engine_name %>_manifest.js decidim_<%= engine_name %>_manifest.css)
+      end
+
+      initializer "decidim_<%= engine_name %>.inject_abilities_to_user" do |_app|
+        Decidim.configure do |config|
+          config.abilities += ["Decidim::<%= engine_module_name %>::Abilities::CurrentUser"]
+        end
+      end
+    end
+  end
+end
