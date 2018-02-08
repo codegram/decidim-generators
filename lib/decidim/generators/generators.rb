@@ -1,13 +1,14 @@
 #!/usr/bin/env ruby
 require "thor"
 require "active_support/inflector"
+require "decidim/version"
 
 module Decidim
   module Generators
     class Generators < Thor
       include Thor::Actions
 
-      attr_reader :engine_name, :engine_module_name, :engine_resource_name, :engine_folder
+      attr_reader :engine_name, :engine_module_name, :engine_resource_name, :engine_folder, :core_version
 
       def self.source_root
         File.dirname(__FILE__)
@@ -21,6 +22,7 @@ module Decidim
         @engine_name = engine_name
         @engine_module_name = engine_name.camelize
         @engine_folder = options[:destination_folder] || "decidim-module-#{engine_name}"
+        @core_version = Decidim.version
 
         # decidim-engine/decidim-engine.gemspec
         template "templates/decidim-engine.gemspec.erb", "#{engine_folder}/decidim-#{engine_name}.gemspec"
@@ -56,6 +58,7 @@ module Decidim
         template "templates/lib/decidim/engine/admin.rb.erb", "#{engine_folder}/lib/decidim/#{engine_name}/admin.rb"
         template "templates/lib/decidim/engine/admin_engine.rb.erb", "#{engine_folder}/lib/decidim/#{engine_name}/admin_engine.rb"
         template "templates/lib/decidim/engine/feature.rb.erb", "#{engine_folder}/lib/decidim/#{engine_name}/feature.rb"
+        template "templates/lib/decidim/engine/version.rb.erb", "#{engine_folder}/lib/decidim/#{engine_name}/version.rb"
         template "templates/lib/decidim/engine/test/factories.rb.erb", "#{engine_folder}/lib/decidim/#{engine_name}/test/factories.rb"
 
         # decidim-engine/spec
