@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
+
 require "thor"
 require "active_support/inflector"
 require "decidim/version"
