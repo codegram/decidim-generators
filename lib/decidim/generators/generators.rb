@@ -70,6 +70,12 @@ module Decidim
         spec_folder = "#{engine_folder}/spec"
         template "templates/spec/spec_helper.rb", "#{spec_folder}/spec_helper.rb"
         template "templates/spec/factories.rb.erb", "#{spec_folder}/factories.rb"
+
+        if options[:gemfile]
+          inside(engine_folder) do
+            Bundler.with_original_env { run "bundle install" }
+          end
+        end
       end
     end
   end
