@@ -34,6 +34,8 @@ module Decidim
 
         template "templates/README.md.erb", "#{engine_folder}/README.md"
 
+        template "templates/.rubocop.yml", "#{engine_folder}/.rubocop.yml"
+
         app_folder = "#{engine_folder}/app"
         template "templates/app/assets/config/engine_manifest.css", "#{app_folder}/assets/config/decidim_#{engine_name}_manifest.css"
         template "templates/app/assets/config/engine_manifest.js", "#{app_folder}/assets/config/decidim_#{engine_name}_manifest.js"
