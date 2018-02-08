@@ -16,7 +16,7 @@ module Decidim
 
       desc "engine ENGINE_NAME", "Generate a decidim engine"
 
-      method_options destination_folder: :string
+      method_options destination_folder: :string, gemfile: :boolean
 
       def engine(engine_name)
         @engine_name = engine_name
@@ -26,6 +26,9 @@ module Decidim
 
         # decidim-engine/decidim-engine.gemspec
         template "templates/decidim-engine.gemspec.erb", "#{engine_folder}/decidim-#{engine_name}.gemspec"
+
+        # decidim-engine/Gemfile
+        template "templates/Gemfile.erb", "#{engine_folder}/Gemfile" if options[:gemfile]
 
         # decidim-engine/Rakefile
         template "templates/Rakefile", "#{engine_folder}/Rakefile"
