@@ -36,6 +36,8 @@ module Decidim
 
         template "templates/.rubocop.yml", "#{engine_folder}/.rubocop.yml"
 
+        template "templates/.gitignore", "#{engine_folder}/.gitignore"
+
         app_folder = "#{engine_folder}/app"
         template "templates/app/assets/config/engine_manifest.css", "#{app_folder}/assets/config/decidim_#{engine_name}_manifest.css"
         template "templates/app/assets/config/engine_manifest.js", "#{app_folder}/assets/config/decidim_#{engine_name}_manifest.js"
