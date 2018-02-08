@@ -48,7 +48,9 @@ module Decidim
         template "templates/app/models/decidim/engine/abilities/process_admin_user.rb.erb", "#{app_folder}/models/decidim/#{engine_name}/abilities/process_admin_user.rb"
         template "templates/app/models/decidim/engine/abilities/current_user.rb.erb", "#{app_folder}/models/decidim/#{engine_name}/abilities/current_user.rb"
 
-        template "templates/bin/rails.erb", "#{engine_folder}/bin/rails"
+        bin_folder = "#{engine_folder}/bin"
+        template "templates/bin/rails.erb", "#{bin_folder}/rails"
+        chmod "#{bin_folder}/rails", "+x"
 
         config_folder = "#{engine_folder}/config"
         template "templates/config/locales/en.yml.erb", "#{config_folder}/locales/en.yml"
