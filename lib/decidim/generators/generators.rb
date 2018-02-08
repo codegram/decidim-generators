@@ -14,10 +14,13 @@ module Decidim
       end
 
       desc "engine ENGINE_NAME", "Generate a decidim engine"
+
+      method_options destination_folder: :string
+
       def engine(engine_name)
         @engine_name = engine_name
         @engine_module_name = engine_name.camelize
-        @engine_folder = "decidim-module-#{engine_name}"
+        @engine_folder = options[:destination_folder] || "decidim-module-#{engine_name}"
 
         # decidim-engine/decidim-engine.gemspec
         template "templates/decidim-engine.gemspec.erb", "#{engine_folder}/decidim-#{engine_name}.gemspec"
