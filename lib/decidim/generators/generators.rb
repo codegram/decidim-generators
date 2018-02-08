@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-require "rubygems" # ruby1.9 doesn't "require" it though
 require "thor"
 require "active_support/inflector"
 
