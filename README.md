@@ -26,7 +26,28 @@ gem install decidim-generators
 
 ## Usage
 
-TODO: Write usage instructions here
+### Generate a new component
+
+```console
+decidim-generators engine my_component
+```
+
+### Generate a new component in a specific folder
+
+You may do this when you want to point to an existing folder or give it a custom
+name.
+
+```console
+decidim-generators engine my_component --destination_folder ../decidim-module-my_component
+```
+
+### Generate a new component with its own Gemfile
+
+You may do this when your plugin is meant to live outside of decidim's core repo.
+
+```
+decidim-generators engine my_component --gemfile
+```
 
 ## Contributing
 
