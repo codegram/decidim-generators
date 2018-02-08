@@ -10,7 +10,7 @@ module Decidim
     class Generators < Thor
       include Thor::Actions
 
-      attr_reader :engine_name, :engine_module_name, :engine_resource_name, :engine_folder, :core_version
+      attr_reader :engine_name, :engine_module_name, :engine_resource_name, :engine_folder, :engine_description, :core_version
 
       def self.source_root
         File.dirname(__FILE__)
@@ -25,6 +25,7 @@ module Decidim
         @engine_module_name = engine_name.camelize
         @engine_folder = options[:destination_folder] || "decidim-module-#{engine_name}"
         @core_version = Decidim.version
+        @engine_description = ask "Write a description for the new component:"
 
         template "templates/decidim-engine.gemspec.erb", "#{engine_folder}/decidim-#{engine_name}.gemspec"
 
