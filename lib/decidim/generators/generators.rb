@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 require "rubygems" # ruby1.9 doesn't "require" it though
 require "thor"
+require "active_support/inflector"
 
 module Decidim
   module Generators
@@ -16,7 +17,7 @@ module Decidim
       desc "engine ENGINE_NAME", "Generate a decidim engine"
       def engine(engine_name)
         @engine_name = engine_name
-        @engine_module_name = engine_name.capitalize
+        @engine_module_name = engine_name.camelize
         @engine_folder = "decidim-#{engine_name}"
 
         # decidim-engine/decidim-engine.gemspec
