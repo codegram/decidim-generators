@@ -41,12 +41,17 @@ name.
 decidim-generators engine my_component --destination_folder ../decidim-module-my_component
 ```
 
-### Generate a new component with its own Gemfile
+### Generate a new component as a external plugin
 
-You may do this when your plugin is meant to live outside of decidim's core repo.
+You may do this when your plugin is meant to live outside of decidim's core
+repo. The generated application has some particularities as opposed to a plugin
+living in the core repo. For example:
+
+* It has its own Gemfile.
+* The dummy application path is different.
 
 ```
-decidim-generators engine my_component --gemfile
+decidim-generators engine my_component --external
 ```
 
 ## Contributing

@@ -18,7 +18,7 @@ module Decidim
 
       desc "engine ENGINE_NAME", "Generate a decidim engine"
 
-      method_options destination_folder: :string, gemfile: :boolean
+      method_options destination_folder: :string, external: :boolean
 
       def engine(engine_name)
         @engine_name = engine_name
@@ -29,7 +29,7 @@ module Decidim
 
         template "templates/decidim-engine.gemspec.erb", "#{engine_folder}/decidim-#{engine_name}.gemspec"
 
-        template "templates/Gemfile.erb", "#{engine_folder}/Gemfile" if options[:gemfile]
+        template "templates/Gemfile.erb", "#{engine_folder}/Gemfile" if options[:external]
 
         template "templates/Rakefile", "#{engine_folder}/Rakefile"
 
@@ -69,10 +69,10 @@ module Decidim
         template "templates/lib/decidim/engine/test/factories.rb.erb", "#{lib_folder}/decidim/#{engine_name}/test/factories.rb"
 
         spec_folder = "#{engine_folder}/spec"
-        template "templates/spec/spec_helper.rb", "#{spec_folder}/spec_helper.rb"
+        template "templates/spec/spec_helper.rb.erb", "#{spec_folder}/spec_helper.rb"
         template "templates/spec/factories.rb.erb", "#{spec_folder}/factories.rb"
 
-        if options[:gemfile]
+        if options[:external]
           inside(engine_folder) do
             Bundler.with_original_env { run "bundle install" }
           end
