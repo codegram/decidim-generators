@@ -8,12 +8,12 @@ require "decidim/generators/version"
 Gem::Specification.new do |spec|
   spec.name = "decidim-generators"
   spec.version = Decidim::Generators::VERSION
-  spec.authors = ["David Morcillo"]
-  spec.email = ["david.morcillo@gmail.com"]
+  spec.authors = ["Decidim"]
+  spec.email = ["info@decidim.org"]
 
   spec.summary = "Decidim generators"
   spec.description = "Decidim generators"
-  spec.homepage = "https://github.com/codegram/decidim-generators"
+  spec.homepage = "https://github.com/decidim/decidim-generators"
   spec.license = "MIT"
 
   spec.files = `git ls-files -z`.split("\x0").reject do |f|
