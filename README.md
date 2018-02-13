@@ -14,21 +14,55 @@ gem 'decidim-generators'
 
 And then execute:
 
-    $ bundle
+```console
+bundle
+```
 
 Or install it yourself as:
 
-    $ gem install decidim-generators
+```console
+gem install decidim-generators
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+### Generate a new component
+
+```console
+decidim-generators engine my_component
+```
+
+### Generate a new component in a specific folder
+
+You may do this when you want to point to an existing folder or give it a custom
+name.
+
+```console
+decidim-generators engine my_component --destination_folder ../decidim-module-my_component
+```
+
+### Generate a new component as a external plugin
+
+You may do this when your plugin is meant to live outside of decidim's core
+repo. The generated application has some particularities as opposed to a plugin
+living in the core repo. For example:
+
+* It has its own Gemfile.
+* The dummy application path is different.
+
+```
+decidim-generators engine my_component --external
+```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/codegram/decidim-generators. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
+Bug reports and pull requests are welcome on
+[GitHub](https://github.com/codegram/decidim-generators). This project is
+intended to be a safe, welcoming space for collaboration, and contributors are
+expected to adhere to the [Contributor
+Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+The gem is available as open source under the terms of the [MIT
+License](http://opensource.org/licenses/MIT).

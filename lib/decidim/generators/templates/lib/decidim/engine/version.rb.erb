@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 module Decidim
+  # This holds the decidim-meetings version.
   module <%= engine_module_name %>
-    # Custom helpers, scoped to the <%= engine_name %> engine.
-    #
-    module ApplicationHelper
+    def self.version
+      "<%= core_version %>"
     end
   end
 end
