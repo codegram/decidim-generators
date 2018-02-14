@@ -28,16 +28,12 @@ module Decidim
         @engine_description = ask "Write a description for the new component:"
 
         template "templates/decidim-engine.gemspec.erb", "#{engine_folder}/decidim-#{engine_name}.gemspec"
-
         template "templates/Gemfile.erb", "#{engine_folder}/Gemfile" if options[:external]
-
         template "templates/Rakefile", "#{engine_folder}/Rakefile"
-
         template "templates/README.md.erb", "#{engine_folder}/README.md"
-
         template "templates/.rubocop.yml", "#{engine_folder}/.rubocop.yml"
-
         template "templates/.gitignore", "#{engine_folder}/.gitignore"
+        template "templates/.circleci/config.yml", "#{engine_folder}/.circleci/config.yml"
 
         app_folder = "#{engine_folder}/app"
         template "templates/app/assets/config/engine_manifest.css", "#{app_folder}/assets/config/decidim_#{engine_name}_manifest.css"
