@@ -6,8 +6,8 @@ require "decidim/<%= engine_name %>/version"
 
 Gem::Specification.new do |s|
   s.version = Decidim::<%= engine_module_name %>.version
-  s.authors = ["Your Name"]
-  s.email = ["your_email@example.org"]
+  s.authors = ["<%= %x[git config user.name].chomp %>"]
+  s.email = ["<%= %x[git config user.email].chomp %>"]
   s.license = "AGPL-3.0"
   s.homepage = "https://github.com/decidim/decidim-module-<%= engine_name %>"
   s.required_ruby_version = ">= 2.3.1"
