@@ -12,3 +12,6 @@
 
 # .rubocop remote config cache
 .rubocop-*-yml
+
+# sample module
+decidim-module-my_component
