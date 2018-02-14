@@ -48,7 +48,6 @@ module Decidim
         template "templates/app/helpers/decidim/engine/application_helper.rb.erb", "#{app_folder}/helpers/decidim/#{engine_name}/application_helper.rb"
         template "templates/app/models/decidim/engine/application_record.rb.erb", "#{app_folder}/models/decidim/#{engine_name}/application_record.rb"
         template "templates/app/models/decidim/engine/abilities/admin_user.rb.erb", "#{app_folder}/models/decidim/#{engine_name}/abilities/admin_user.rb"
-        template "templates/app/models/decidim/engine/abilities/process_admin_user.rb.erb", "#{app_folder}/models/decidim/#{engine_name}/abilities/process_admin_user.rb"
         template "templates/app/models/decidim/engine/abilities/current_user.rb.erb", "#{app_folder}/models/decidim/#{engine_name}/abilities/current_user.rb"
 
         bin_folder = "#{engine_folder}/bin"
