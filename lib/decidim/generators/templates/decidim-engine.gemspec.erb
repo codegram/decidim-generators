@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.summary = "A decidim <%= engine_name %> module"
   s.description = "<%= engine_description %>."
 
-  s.files = Dir["lib/**/*", "Rakefile", "README.md"]
+  s.files = Dir["{app,config,lib}/**/*", "Rakefile", "README.md"]
 
   s.add_dependency "decidim-core", Decidim::<%= engine_module_name %>.version
 end
