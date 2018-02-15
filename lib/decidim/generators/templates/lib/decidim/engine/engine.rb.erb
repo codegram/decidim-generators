@@ -16,7 +16,7 @@ module Decidim
       end
 
       initializer "decidim_<%= engine_name %>.assets" do |app|
-        app.config.assets.precompile += %w(decidim_<%= engine_name %>_manifest.js decidim_<%= engine_name %>_manifest.css)
+        app.config.assets.precompile += %w[decidim_<%= engine_name %>_manifest.js decidim_<%= engine_name %>_manifest.css]
       end
 
       initializer "decidim_<%= engine_name %>.inject_abilities_to_user" do |_app|

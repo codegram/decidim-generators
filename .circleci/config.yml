@@ -1,0 +1,30 @@
+---
+
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: ruby:2.5.0
+
+    working_directory: /app
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - bundler-dependencies-{{ checksum "Gemfile.lock" }}
+
+      - run:
+          name: Install dependencies
+          command: bundle install
+
+      - save_cache:
+          key: bundler-dependencies-{{ checksum "Gemfile.lock" }}
+          paths:
+            - /usr/local/bundle
+
+      - run:
+          name: Run our checks
+          command: scripts/ci.sh
