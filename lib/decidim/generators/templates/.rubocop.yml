@@ -1,6 +1,10 @@
 ---
 
 AllCops:
+  Exclude:
+    - "development_app/**/*"
+    - "spec/decidim_dummy_app/**/*"
+
   DisplayCopNames: true
 
   DisplayStyleGuide: true
