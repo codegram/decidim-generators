@@ -26,6 +26,23 @@ gem install decidim-generators
 
 ## Usage
 
+This repo helps you generating the scheleton of a decidim plugin. It will
+generate a folder with a plugin's code skeleton that you then need to properly
+require in your final decidim application in order to use it. To do that, you
+need to include the plugin in your application's `Gemfile`.
+
+For example, if you generated your plugin at
+`~/decidim-generators/decidim-module-experimental_plugin`, you'll need to edit
+your `Gemfile` like this in order for the plugin to be used:
+
+```ruby
+gem "decidim-experimental_plugin", path: "~/decidim-generators/decidim-module-experimental_plugin"
+```
+
+Once you do that, and boot your application, you'll see the new component being
+offered in the "New component" selector on the "Components" section of any
+participatory space in the admin dashboard.
+
 ### Generate a new component
 
 ```console
