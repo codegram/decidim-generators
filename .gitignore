@@ -12,3 +12,6 @@
 
 # sample module
 decidim-module-my_component
+
+# rubocop cached remote config
+.rubocop-https---raw-githubusercontent-com-decidim-decidim-master--rubocop-yml
