@@ -59,7 +59,7 @@ module Decidim
         template "templates/lib/decidim/engine/engine.rb.erb", "#{lib_folder}/decidim/#{engine_name}/engine.rb"
         template "templates/lib/decidim/engine/admin.rb.erb", "#{lib_folder}/decidim/#{engine_name}/admin.rb"
         template "templates/lib/decidim/engine/admin_engine.rb.erb", "#{lib_folder}/decidim/#{engine_name}/admin_engine.rb"
-        template "templates/lib/decidim/engine/feature.rb.erb", "#{lib_folder}/decidim/#{engine_name}/feature.rb"
+        template "templates/lib/decidim/engine/component.rb.erb", "#{lib_folder}/decidim/#{engine_name}/component.rb"
         template "templates/lib/decidim/engine/version.rb.erb", "#{lib_folder}/decidim/#{engine_name}/version.rb"
         template "templates/lib/decidim/engine/test/factories.rb.erb", "#{lib_folder}/decidim/#{engine_name}/test/factories.rb"
 
