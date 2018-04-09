@@ -39,6 +39,10 @@ your `Gemfile` like this in order for the plugin to be used:
 gem "decidim-experimental_plugin", path: "~/decidim-generators/decidim-module-experimental_plugin"
 ```
 
+Once you do that, and boot your application, you'll see the new component being
+offered in the "New component" selector on the "Components" section of any
+participatory space in the admin dashboard.
+
 ### Generate a new component
 
 ```console
