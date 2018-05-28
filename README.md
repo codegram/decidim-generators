@@ -1,5 +1,7 @@
 Note: ***THIS REPO IS OUTDATED**. Please use https://github.com/decidim/decidim/tree/master/decidim-generators instead.
 
+---
+
 # Decidim::Generators
 
 [![asciicast](https://asciinema.org/a/9afrow4k095ksyuahpgjipfl4.png)](https://asciinema.org/a/9afrow4k095ksyuahpgjipfl4)
